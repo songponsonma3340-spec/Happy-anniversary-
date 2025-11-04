@@ -3,49 +3,73 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ครบรอบ 2 ปี 1 เดือน — เซอร์ไพรส์</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>เซอร์ไพรส์ครบรอบ 2 ปี 1 เดือน</title>
+  <meta name="description" content="ตอบคำถามให้ถูก แล้วรับชมวิดีโอเซอร์ไพรส์ครบรอบ 2 ปี 1 เดือน">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="container">
+  <main class="wrap">
     <header class="hero">
-      <h1>วันนี้ครบรอบเท่าไหร่? 🥰</h1>
-      <p class="subtitle">เฉลยแล้วเด้งวิดีโอเซอร์ไพรส์ทันที (วันครบรอบ: วันที่ 5)</p>
+      <h1>💖 เซอร์ไพรส์ครบรอบ 💖</h1>
+      <p>ตอบคำถามเล็ก ๆ น้อย ๆ ก่อนดูวิดีโอพิเศษนะ</p>
     </header>
 
-    <section id="quiz-card" class="card">
-      <h2>คำถาม</h2>
-      <p class="question">วันนี้ครบรอบกี่ปีกี่เดือน</p>
-      <form id="quiz-form" class="options"></form>
-      <button id="submit-btn" class="btn">ยืนยันคำตอบ</button>
+    <section id="quizCard" class="card">
+      <h2>วันนี้ครบรอบกี่ปีกี่เดือน?</h2>
+
+      <form id="quizForm" class="choices" autocomplete="off">
+        <label class="choice">
+          <input type="radio" name="answer" value="ผิด_2ปี" required>
+          <span>2 ปี</span>
+        </label>
+
+        <label class="choice">
+          <input type="radio" name="answer" value="ถูก_2ปี1เดือน">
+          <span>2 ปี 1 เดือน</span>
+        </label>
+
+        <label class="choice">
+          <input type="radio" name="answer" value="ผิด_1ปี2เดือน">
+          <span>1 ปี 2 เดือน</span>
+        </label>
+
+        <label class="choice">
+          <input type="radio" name="answer" value="ผิด_3ปี1เดือน">
+          <span>3 ปี 1 เดือน</span>
+        </label>
+
+        <button type="submit" class="btn-primary">ยืนยันคำตอบ</button>
+      </form>
+
       <p id="feedback" class="feedback" aria-live="polite"></p>
     </section>
 
-    <section id="video-card" class="card video hidden" aria-hidden="true">
-      <h2>เซอร์ไพรส์สำหรับเรา 💖</h2>
-      <div class="video-wrap">
-        <iframe
-          id="yt-player"
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/Dytw4JlyFec?rel=0&modestbranding=1&autoplay=1"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
+    <section id="videoSection" class="video hidden" aria-hidden="true">
+      <div class="card success">
+        <h2>เยี่ยมมาก! 🎉 ถูกต้องแล้ว</h2>
+        <p>พร้อมจะรับชมวิดีโอเซอร์ไพรส์หรือยัง?</p>
+        <div class="actions">
+          <button id="playBtn" class="btn-primary">ดูวิดีโอเลย!</button>
+          <button id="unmuteBtn" class="btn-secondary hidden">เปิดเสียง</button>
+        </div>
       </div>
-      <div class="celebrate">
-        <p>สุขสันต์วันครบรอบ <span class="badge">2 ปี 1 เดือน</span> 🎉</p>
-        <p class="date-note">* เราฉลองกันทุกวันที่ <strong>5</strong> ของเดือนนะ *</p>
+
+      <div class="player-wrap">
+        <div id="player" class="player" title="YouTube player"></div>
       </div>
-      <button id="restart-btn" class="btn secondary">ตอบใหม่อีกครั้ง</button>
     </section>
 
-    <footer class="footer">
-      <small>© <span id="year"></span> จากใจ Benz 💝</small>
+    <footer class="foot">
+      <small>© เซอร์ไพรส์ของเรา – ทำด้วยรัก</small>
     </footer>
   </main>
+
+  <!-- Canvas สำหรับคอนเฟตติ -->
+  <canvas id="confettiCanvas" class="confetti"></canvas>
+
   <script src="script.js"></script>
+  <script>
+    // โหลด YouTube Iframe API หลังจากผู้ใช้ตอบถูก (ดูใน script.js)
+  </script>
 </body>
 </html>
